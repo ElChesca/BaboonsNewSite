@@ -121,6 +121,94 @@ export const erpShowcases: ErpShowcase[] = [
       },
     ],
   },
+  {
+    verticalSlug: 'manufactura',
+    titulo: 'Así se ve Baboons ERP para plantas de producción',
+    subtitulo:
+      'Órdenes de producción, recetas BOM, control de calidad y dashboard de planta — desde la fábrica de pastas Bossio hasta cualquier planta alimenticia o industrial.',
+    capturasDestacadas: [
+      {
+        src: '/images/erp/manufactura/gestion-manufactura-planta.png',
+        titulo: 'Gestión de Manufactura (Planta)',
+        descripcion:
+          'Acceso directo a órdenes de producción, recetas BOM, control de calidad y dashboard de planta.',
+      },
+      {
+        src: '/images/erp/manufactura/ordenes-produccion-kanban.png',
+        titulo: 'Órdenes de Producción — Kanban',
+        descripcion:
+          'Tablero Kanban con lotes en borrador, planificadas, en proceso, control de calidad y finalizadas.',
+      },
+      {
+        src: '/images/erp/manufactura/formulas-recetas-bom.png',
+        titulo: 'Fórmulas / Recetas (BOM)',
+        descripcion:
+          'Estructuras de materiales con materias primas, insumos y packaging. Clonado, explosión e impresión.',
+      },
+      {
+        src: '/images/erp/manufactura/dashboard-planta.png',
+        titulo: 'Dashboard de Control de Planta',
+        descripcion:
+          'KPIs de órdenes activas, aprobación de calidad, fórmulas activas y alertas de materia prima.',
+      },
+      {
+        src: '/images/erp/manufactura/control-calidad.png',
+        titulo: 'Estación de Control de Calidad',
+        descripcion:
+          'Inspecciones de lote, bitácoras de conformidad y criterios dinámicos por producto.',
+      },
+      {
+        src: '/images/erp/manufactura/estructura-bom.png',
+        titulo: 'Estructura de Manufactura (BOM)',
+        descripcion:
+          'Explosión de componentes, fases de manufactura y reporte imprimible generado desde el ERP.',
+      },
+    ],
+    secciones: [
+      {
+        titulo: 'Gestión de Manufactura (Planta)',
+        modulos: [
+          'Órdenes de Producción',
+          'Recetas / BOM',
+          'Control de Calidad',
+          'Dashboard Planta',
+        ],
+      },
+      {
+        titulo: 'Producción y trazabilidad',
+        modulos: [
+          'Tablero Kanban de OPs',
+          'Inventario de Lotes & Trazabilidad',
+          'Parte Diario de Planta',
+          'Reserva de materia prima',
+          'Quality gate obligatorio',
+          'Packaging y envases',
+        ],
+      },
+      {
+        titulo: 'Recetas y formulación',
+        modulos: [
+          'Fórmulas / Recetas (BOM)',
+          'Explosión de componentes',
+          'Fases de manufactura',
+          'Clonado de recetas',
+          'Impresión de estructura BOM',
+          'Rendimiento base por receta',
+        ],
+      },
+      {
+        titulo: 'Control de calidad',
+        modulos: [
+          'Estación QC en planta',
+          'Criterios dinámicos por producto',
+          'Bitácora de ensayos',
+          'Historial de inspecciones',
+          'Dictamen Aprobado / Rechazado',
+          'Muestreo estadístico (AQL)',
+        ],
+      },
+    ],
+  },
 ]
 
 export function getErpShowcase(verticalSlug: string): ErpShowcase | undefined {

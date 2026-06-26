@@ -4,6 +4,7 @@ import { Card } from '../../components/ui/Card'
 import { Badge } from '../../components/ui/Badge'
 import { Seo } from '../../components/ui/Seo'
 import { modulos } from '../../content/modulos'
+import { ERP_TOTAL_MODULOS } from '../../content/erpStats'
 
 export default function ModulosIndex() {
   const activos = modulos.filter((modulo) => modulo.status === 'activo')
@@ -13,17 +14,21 @@ export default function ModulosIndex() {
     <>
       <Seo
         title="M?dulos ? Baboons ERP"
-        description="Todos los m?dulos de Baboons ERP: POS, manufactura, facturaci?n AFIP, CRM, inventario, compras, distribuci?n, remitos y los nuevos TMS, WMS y CEDI."
+        description={`Baboons ERP incluye m?s de ${ERP_TOTAL_MODULOS} m?dulos: POS, manufactura, facturaci?n AFIP, CRM, inventario, compras, distribuci?n, remitos y m?s.`}
       />
       <PageHero
         eyebrow="M?dulos"
         title="Los m?dulos del sistema"
-        subtitle="14 m?dulos en producci?n y los nuevos que llevan a Baboons al nivel enterprise. Cada negocio activa solo lo que necesita."
+        subtitle={`Baboons incluye m?s de ${ERP_TOTAL_MODULOS} m?dulos en producci?n. Ac? mostramos los principales agrupados por capacidad ? cada negocio activa solo lo que necesita.`}
       />
 
       <section className="py-16">
         <Container>
-          <h2 className="text-xl font-bold text-ink">M?dulos activos</h2>
+          <h2 className="text-xl font-bold text-ink">M?dulos destacados</h2>
+          <p className="mt-2 max-w-2xl text-sm text-muted">
+            Estas son las capacidades principales del ERP. El inventario completo supera los{' '}
+            {ERP_TOTAL_MODULOS} m?dulos seg?n el tipo de negocio configurado.
+          </p>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {activos.map((modulo) => (
               <Card key={modulo.slug} to={`/modulos/${modulo.slug}`}>

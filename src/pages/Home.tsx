@@ -9,9 +9,10 @@ import { HeroPrincipal } from '../components/home/HeroPrincipal'
 import { verticales } from '../content/verticales'
 import { modulos } from '../content/modulos'
 import { casos } from '../content/casos'
+import { ERP_TOTAL_MODULOS } from '../content/erpStats'
 
 const metricas = [
-  { valor: '14+', label: 'Módulos integrados' },
+  { valor: ERP_TOTAL_MODULOS, label: 'Módulos integrados' },
   { valor: '7', label: 'Verticales de negocio' },
   { valor: '100%', label: 'Compliance ARCA/AFIP' },
   { valor: 'PWA', label: 'Web · Mobile · Desktop' },
@@ -121,7 +122,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Módulos"
             title="Todo conectado, nada duplicado"
-            subtitle="14 módulos activos que comparten base de datos, usuarios y caja. Desde el POS del mozo hasta la orden de producción en planta."
+            subtitle={`Más de ${ERP_TOTAL_MODULOS} módulos que comparten base de datos, usuarios y caja. Desde el POS del mozo hasta la orden de producción en planta.`}
           />
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {modulosActivos.slice(0, 6).map((modulo) => (
@@ -136,7 +137,7 @@ export default function Home() {
           </div>
           <div className="mt-8 text-center">
             <Button to="/modulos" variant="secondary">
-              Ver los {modulosActivos.length} módulos
+              Ver módulos destacados
               <ArrowRight size={16} aria-hidden="true" />
             </Button>
           </div>
@@ -212,6 +213,34 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </Container>
+      </section>
+
+      {/* Vista previa ERP — Manufactura */}
+      <section className="border-t border-line bg-surface py-20">
+        <Container>
+          <SectionHeading
+            eyebrow="El ERP en acción"
+            title="Manufactura: de la receta al lote finalizado"
+            subtitle="Órdenes de producción en Kanban, recetas BOM, control de calidad y dashboard de planta — implementado en la Fábrica de Pastas Bossio."
+          />
+          <div className="mt-10 overflow-hidden rounded-2xl border border-line shadow-[var(--shadow-card)]">
+            <img
+              src="/images/erp/manufactura/ordenes-produccion-kanban.png"
+              alt="Órdenes de Producción en tablero Kanban — Baboons ERP Manufactura"
+              className="w-full object-cover object-top"
+              loading="lazy"
+            />
+          </div>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button to="/verticales/manufactura">
+              Ver vertical Manufactura
+              <ArrowRight size={16} aria-hidden="true" />
+            </Button>
+            <Button to="/contacto" variant="secondary">
+              Solicitar demo
+            </Button>
+          </div>
         </Container>
       </section>
 

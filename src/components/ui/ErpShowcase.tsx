@@ -15,7 +15,7 @@ export function ErpShowcase({ titulo, subtitulo, capturas, secciones }: ErpShowc
         <p className="mt-2 max-w-3xl text-muted">{subtitulo}</p>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
         {capturas.map((captura) => (
           <figure
             key={captura.src}

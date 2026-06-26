@@ -8,14 +8,15 @@ export function HeroPrincipal() {
   return (
     <section className="border-b border-line bg-bg">
       <h1 className="sr-only">Baboons ERP — Plataforma ERP multi-negocio para Argentina</h1>
-      <Container className="py-6 sm:py-10">
-        <div className="relative overflow-hidden rounded-2xl shadow-[var(--shadow-lift)] ring-1 ring-line">
+      <Container className="py-5 sm:py-8">
+        <figure className="relative mx-auto w-full max-w-7xl overflow-hidden rounded-xl shadow-[var(--shadow-lift)] ring-1 ring-line sm:rounded-2xl">
           <img
             src={heroImageSrc}
             alt="Baboons ERP — soluciones por industria: gastronomía, distribución, manufactura, neumáticos, eventos, concesionarias y más"
-            className="block w-full"
-            width={1600}
-            height={900}
+            className="block h-auto w-full"
+            width={1920}
+            height={1080}
+            decoding="async"
             fetchPriority="high"
           />
 
@@ -28,20 +29,20 @@ export function HeroPrincipal() {
               <Link
                 key={card.label}
                 to={card.to}
-                className="group relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+                className="group relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand"
                 aria-label={card.label}
               >
                 <span className="sr-only">{card.label}</span>
                 <span
-                  className="absolute inset-0 bg-brand/0 transition-colors duration-200 group-hover:bg-brand/10 group-focus-visible:bg-brand/10"
+                  className="absolute inset-0 bg-brand/0 transition-colors duration-200 group-hover:bg-brand/15 group-focus-visible:bg-brand/15"
                   aria-hidden="true"
                 />
               </Link>
             ))}
           </div>
-        </div>
+        </figure>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-7 flex flex-wrap items-center justify-center gap-3 sm:mt-8">
           <Button to="/contacto" size="lg">
             Solicitar demo
             <ArrowRight size={18} aria-hidden="true" />
