@@ -5,7 +5,7 @@ import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { Seo } from '../components/ui/Seo'
-import { Logo } from '../components/ui/Logo'
+import { HeroPrincipal } from '../components/home/HeroPrincipal'
 import { verticales } from '../content/verticales'
 import { modulos } from '../content/modulos'
 import { casos } from '../content/casos'
@@ -75,35 +75,7 @@ export default function Home() {
         description="Un solo ecosistema para POS, manufactura, facturación AFIP, logística, CRM, distribución y concesionarias. Tecnología local, respaldo presencial. Desde San Luis, Argentina."
       />
 
-      {/* Hero */}
-      <section className="border-b border-line bg-surface">
-        <Container className="py-20 text-center sm:py-28">
-          <div className="mx-auto flex justify-center">
-            <Logo size="xl" />
-          </div>
-          <div className="mx-auto mt-8 inline-flex items-center gap-2 rounded-full border border-line-strong bg-bg px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden="true" />
-            Plataforma ERP multi-negocio · Argentina
-          </div>
-          <h1 className="mx-auto mt-7 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-ink sm:text-6xl">
-            El ERP que escala con tu <span className="text-brand">operación</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted">
-            Baboons unifica POS, manufactura, facturación ARCA, inventario, logística, CRM y
-            distribución. Operado en plantas de pastas, clubes premium, distribuidoras de neumáticos
-            y concesionarias de vehículos.
-          </p>
-          <div className="mt-9 flex flex-wrap justify-center gap-3">
-            <Button to="/contacto" size="lg">
-              Solicitar demo
-              <ArrowRight size={18} aria-hidden="true" />
-            </Button>
-            <Button to="/producto" variant="secondary" size="lg">
-              Ver el producto
-            </Button>
-          </div>
-        </Container>
-      </section>
+      <HeroPrincipal />
 
       {/* Métricas */}
       <section className="border-b border-line bg-bg">

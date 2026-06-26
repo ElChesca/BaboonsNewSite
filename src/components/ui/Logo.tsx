@@ -9,17 +9,24 @@ type LogoProps = {
 }
 
 const imageSizes = {
-  sm: 'h-9 w-9',
-  md: 'h-11 w-11',
+  sm: 'h-8 w-8',
+  md: 'h-10 w-10',
+  lg: 'h-14 w-14',
+  xl: 'h-20 w-20',
+}
+
+const shellSizes = {
+  sm: 'h-10 w-10',
+  md: 'h-12 w-12',
   lg: 'h-16 w-16',
-  xl: 'h-24 w-24',
+  xl: 'h-[5.5rem] w-[5.5rem]',
 }
 
 const pixelSizes = {
-  sm: 36,
-  md: 44,
-  lg: 64,
-  xl: 96,
+  sm: 32,
+  md: 40,
+  lg: 56,
+  xl: 80,
 }
 
 export function Logo({ className = '', size = 'md', showText = true }: LogoProps) {
@@ -31,14 +38,20 @@ export function Logo({ className = '', size = 'md', showText = true }: LogoProps
       className={`inline-flex items-center gap-3 ${className}`}
       aria-label="Baboons.Co — Inicio"
     >
-      <img
-        src={logoSrc}
-        alt="Baboons.Co"
-        className={`${imageSizes[size]} shrink-0 rounded-full object-contain shadow-sm ring-1 ring-line`}
-        width={px}
-        height={px}
-        decoding="async"
-      />
+      {/* Fondo oscuro: el isotipo es blanco sobre negro y desaparece en fondos claros */}
+      <span
+        className={`${shellSizes[size]} inline-flex shrink-0 items-center justify-center rounded-full bg-ink shadow-[var(--shadow-card)] ring-2 ring-ink/20`}
+      >
+        <img
+          src={logoSrc}
+          alt=""
+          aria-hidden="true"
+          className={`${imageSizes[size]} rounded-full object-cover`}
+          width={px}
+          height={px}
+          decoding="async"
+        />
+      </span>
       {showText ? (
         <span className="text-lg font-extrabold tracking-tight text-ink">
           Baboons<span className="text-brand">.Co</span>
