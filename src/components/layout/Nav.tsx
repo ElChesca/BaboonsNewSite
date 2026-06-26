@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { Container } from './Container'
+import { Logo } from '../ui/Logo'
 
 const links = [
   { to: '/producto', label: 'Producto' },
@@ -18,9 +19,7 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-surface/90 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between">
-        <Link to="/" className="text-lg font-extrabold tracking-tight text-ink">
-          Baboons<span className="text-brand">.Co</span>
-        </Link>
+        <Logo />
 
         <nav aria-label="Navegación principal" className="hidden items-center gap-7 lg:flex">
           {links.map((link) => (

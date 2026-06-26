@@ -11,7 +11,7 @@ export default function VerticalesIndex() {
     <>
       <Seo
         title="Verticales — Baboons ERP"
-        description="Las verticales de negocio que cubre Baboons ERP: gastronomía, distribución, logística y la nueva vertical para concesionarias de vehículos y maquinaria."
+        description="Las verticales de negocio que cubre Baboons ERP: gastronomía, manufactura, distribución, neumáticos, logística, clubes premium y concesionarias."
       />
       <PageHero
         eyebrow="Verticales"

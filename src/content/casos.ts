@@ -12,11 +12,43 @@ export type Caso = {
   borrador?: boolean
 }
 
-/**
- * Contenido inicial en borrador. Reemplazar por casos reales confirmados
- * con cada cliente (nombre, métricas y testimonio).
- */
 export const casos: Caso[] = [
+  {
+    slug: 'bossio-manufactura',
+    cliente: 'Bossio · Fábrica de Pastas',
+    vertical: 'manufactura',
+    rubro: 'Manufactura de alimentos · Cadena de sucursales',
+    modulos: ['mes', 'inventario', 'remitos', 'compras', 'facturacion'],
+    resultado:
+      'Unificó producción en planta, transferencias a sucursales y solicitud de mercadería con generación automática de Órdenes de Producción.',
+  },
+  {
+    slug: 'vitaclub-eventos',
+    cliente: 'Vita Club',
+    vertical: 'club-premium',
+    rubro: 'Club premium · Eventos y gastronomía',
+    modulos: ['reservas-eventos', 'pos-resto', 'crm', 'cuenta-corriente'],
+    resultado:
+      'Portal de reservas, calendario de eventos, propinas digitales y gamificación de puntos en una sola plataforma.',
+  },
+  {
+    slug: 'neumar-distribucion',
+    cliente: 'Neumar',
+    vertical: 'neumar',
+    rubro: 'Distribuidora de neumáticos',
+    modulos: ['distribuidora', 'inventario', 'remitos', 'facturacion', 'listas-precios'],
+    resultado:
+      'Portal de ventas B2B, van sales con auto-venta a bordo e integración desacoplada con Odoo para contabilidad.',
+  },
+  {
+    slug: 'cuyo-automotores',
+    cliente: 'Cuyo Automotores',
+    vertical: 'concesionarias',
+    rubro: 'Concesionaria de vehículos · Mendoza',
+    modulos: ['inventario', 'facturacion', 'crm', 'cuenta-corriente'],
+    resultado:
+      'Portal B2C premium con captura de leads, CRM integrado y trazabilidad por unidad desde showroom hasta postventa.',
+  },
   {
     slug: 'distribuidora-ejemplo',
     cliente: 'Distribuidora del Centro',
@@ -40,16 +72,6 @@ export const casos: Caso[] = [
     modulos: ['pos-resto', 'facturacion', 'inventario'],
     resultado:
       'Unificó salón, cocina y stock: la caja cierra a la primera y la carta refleja el stock real.',
-    borrador: true,
-  },
-  {
-    slug: 'concesionaria-ejemplo',
-    cliente: 'Concesionaria Regional',
-    vertical: 'concesionarias',
-    rubro: 'Vehículos y maquinaria agrícola',
-    modulos: ['inventario', 'facturacion', 'cuenta-corriente', 'mes'],
-    resultado:
-      'Trazabilidad por unidad desde la compra hasta la postventa, con repuestos y taller sobre el mismo stock.',
     borrador: true,
   },
 ]

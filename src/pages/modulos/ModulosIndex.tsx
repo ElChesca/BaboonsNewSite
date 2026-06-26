@@ -12,18 +12,18 @@ export default function ModulosIndex() {
   return (
     <>
       <Seo
-        title="Módulos — Baboons ERP"
-        description="Todos los módulos de Baboons ERP: POS, facturación AFIP, inventario, distribución, cuenta corriente, MES y los nuevos TMS, WMS y CEDI."
+        title="M?dulos ? Baboons ERP"
+        description="Todos los m?dulos de Baboons ERP: POS, manufactura, facturaci?n AFIP, CRM, inventario, compras, distribuci?n, remitos y los nuevos TMS, WMS y CEDI."
       />
       <PageHero
-        eyebrow="Módulos"
-        title="Los módulos del sistema"
-        subtitle="Los módulos en producción y los nuevos que llevan a Baboons al nivel enterprise. Cada negocio activa solo lo que necesita."
+        eyebrow="M?dulos"
+        title="Los m?dulos del sistema"
+        subtitle="14 m?dulos en producci?n y los nuevos que llevan a Baboons al nivel enterprise. Cada negocio activa solo lo que necesita."
       />
 
       <section className="py-16">
         <Container>
-          <h2 className="text-xl font-bold text-ink">Módulos activos</h2>
+          <h2 className="text-xl font-bold text-ink">M?dulos activos</h2>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {activos.map((modulo) => (
               <Card key={modulo.slug} to={`/modulos/${modulo.slug}`}>
@@ -36,7 +36,7 @@ export default function ModulosIndex() {
             ))}
           </div>
 
-          <h2 className="mt-14 text-xl font-bold text-ink">Próximamente</h2>
+          <h2 className="mt-14 text-xl font-bold text-ink">Pr?ximamente</h2>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {proximos.map((modulo) => (
               <Card key={modulo.slug} to={`/modulos/${modulo.slug}`}>
@@ -44,7 +44,7 @@ export default function ModulosIndex() {
                   <span className="text-xs font-semibold uppercase tracking-wider text-subtle">
                     {modulo.categoria}
                   </span>
-                  <Badge tone="cyan">Próximamente</Badge>
+                  <Badge tone="cyan">Pr?ximamente</Badge>
                 </div>
                 <h3 className="mt-1 font-bold text-ink">{modulo.nombre}</h3>
                 <p className="mt-1.5 text-sm text-muted">{modulo.resumen}</p>

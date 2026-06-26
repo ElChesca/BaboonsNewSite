@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Container } from './Container'
+import { Logo } from '../ui/Logo'
 
 const columnas = [
   {
@@ -15,8 +16,11 @@ const columnas = [
     titulo: 'Verticales',
     links: [
       { to: '/verticales/gastronomia', label: 'Gastronomía' },
+      { to: '/verticales/manufactura', label: 'Manufactura' },
       { to: '/verticales/distribucion', label: 'Distribución' },
+      { to: '/verticales/neumar', label: 'Neumar' },
       { to: '/verticales/logistica', label: 'Logística' },
+      { to: '/verticales/club-premium', label: 'Clubes & Eventos' },
       { to: '/verticales/concesionarias', label: 'Concesionarias' },
     ],
   },
@@ -36,9 +40,7 @@ export function Footer() {
       <Container className="py-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <span className="text-lg font-extrabold tracking-tight text-ink">
-              Baboons<span className="text-brand">.Co</span>
-            </span>
+            <Logo />
             <p className="mt-3 max-w-xs text-sm text-muted">
               Plataforma ERP multi-negocio. Tecnología local, respaldo presencial.
             </p>

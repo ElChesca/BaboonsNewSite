@@ -19,7 +19,7 @@ export default function CasosDeExito() {
     <>
       <Seo
         title="Clientes y casos de éxito — Baboons ERP"
-        description="Negocios reales que ya operan con Baboons ERP: gastronomía, distribución, logística y concesionarias."
+        description="Negocios reales que ya operan con Baboons ERP: Bossio, Vita Club, Neumar, Cuyo Automotores y más."
       />
       <PageHero
         eyebrow="Clientes"

@@ -1,15 +1,18 @@
-import { ArrowRight, Boxes, MapPin, RefreshCw, Smartphone } from 'lucide-react'
+import { ArrowRight, Boxes, MapPin, RefreshCw, Shield, Smartphone, Users } from 'lucide-react'
 import { Container } from '../components/layout/Container'
 import { Button } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { Seo } from '../components/ui/Seo'
+import { Logo } from '../components/ui/Logo'
 import { verticales } from '../content/verticales'
+import { modulos } from '../content/modulos'
+import { casos } from '../content/casos'
 
 const metricas = [
-  { valor: '9+', label: 'Módulos integrados' },
-  { valor: '5', label: 'Verticales de negocio' },
+  { valor: '14+', label: 'Módulos integrados' },
+  { valor: '7', label: 'Verticales de negocio' },
   { valor: '100%', label: 'Compliance ARCA/AFIP' },
   { valor: 'PWA', label: 'Web · Mobile · Desktop' },
 ]
@@ -25,13 +28,13 @@ const valores = [
     icon: Boxes,
     titulo: 'Un solo ecosistema',
     detalle:
-      'POS, logística, almacenes y distribución comparten base de datos, clientes, inventario y caja.',
+      'POS, manufactura, logística, CRM y distribución comparten base de datos, clientes, inventario y caja.',
   },
   {
     icon: Smartphone,
     titulo: 'Mobile-first',
     detalle:
-      'Interfaz PWA optimizada para trabajo en campo: repartidores en tablet, admins en desktop.',
+      'Interfaz PWA optimizada para trabajo en campo: repartidores en tablet, mozos en celular, admins en desktop.',
   },
   {
     icon: RefreshCw,
@@ -39,20 +42,46 @@ const valores = [
     detalle:
       'Stock disponible al instante, estado de entregas en vivo y caja sincronizada sin refresh manual.',
   },
+  {
+    icon: Shield,
+    titulo: 'Roles y permisos',
+    detalle:
+      'Arquitectura de 3 capas con self-healing y perfiles diferenciados por tipo de negocio y rol operativo.',
+  },
+  {
+    icon: Users,
+    titulo: 'CRM integrado',
+    detalle:
+      'Cerebro comercial con leads, Instagram/Facebook, auto-respondedor y pipeline de oportunidades.',
+  },
+]
+
+const integraciones = [
+  'ARCA / AFIP — facturación electrónica nativa',
+  'Instagram & Facebook — CRM Meta con DMs y comentarios',
+  'Odoo — integración desacoplada para contabilidad',
+  'Resend — notificaciones de leads por email',
+  'Mercado Pago — cobro en POS y campo',
 ]
 
 export default function Home() {
+  const modulosActivos = modulos.filter((m) => m.status === 'activo')
+  const casosReales = casos.filter((c) => !c.borrador)
+
   return (
     <>
       <Seo
         title="Baboons ERP — Plataforma ERP multi-negocio"
-        description="Un solo ecosistema para POS, facturación AFIP, logística, distribución y concesionarias. Tecnología local, respaldo presencial. Desde San Luis, Argentina."
+        description="Un solo ecosistema para POS, manufactura, facturación AFIP, logística, CRM, distribución y concesionarias. Tecnología local, respaldo presencial. Desde San Luis, Argentina."
       />
 
       {/* Hero */}
       <section className="border-b border-line bg-surface">
         <Container className="py-20 text-center sm:py-28">
-          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-line-strong bg-bg px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted">
+          <div className="mx-auto flex justify-center">
+            <Logo size="lg" className="flex-col gap-3 sm:flex-row" />
+          </div>
+          <div className="mx-auto mt-8 inline-flex items-center gap-2 rounded-full border border-line-strong bg-bg px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted">
             <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden="true" />
             Plataforma ERP multi-negocio · Argentina
           </div>
@@ -60,8 +89,9 @@ export default function Home() {
             El ERP que escala con tu <span className="text-brand">operación</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted">
-            Baboons unifica POS, facturación AFIP, inventario, logística y distribución. Ahora suma
-            una vertical para concesionarias de vehículos y maquinaria.
+            Baboons unifica POS, manufactura, facturación ARCA, inventario, logística, CRM y
+            distribución. Operado en plantas de pastas, clubes premium, distribuidoras de neumáticos
+            y concesionarias de vehículos.
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <Button to="/contacto" size="lg">
@@ -93,7 +123,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Verticales de negocio"
             title="Un ecosistema, múltiples verticales"
-            subtitle="Cada negocio activa solo lo que necesita. Un restaurante, una distribuidora y una concesionaria pueden operar sobre la misma plataforma."
+            subtitle="Cada negocio activa solo lo que necesita. Una fábrica de pastas, un club premium, una distribuidora de neumáticos y una concesionaria operan sobre la misma plataforma."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {verticales.map((vertical) => (
@@ -113,11 +143,66 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Módulos destacados */}
+      <section className="border-y border-line bg-surface py-20">
+        <Container>
+          <SectionHeading
+            eyebrow="Módulos"
+            title="Todo conectado, nada duplicado"
+            subtitle="14 módulos activos que comparten base de datos, usuarios y caja. Desde el POS del mozo hasta la orden de producción en planta."
+          />
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {modulosActivos.slice(0, 6).map((modulo) => (
+              <Card key={modulo.slug} to={`/modulos/${modulo.slug}`}>
+                <span className="text-xs font-semibold uppercase tracking-wider text-subtle">
+                  {modulo.categoria}
+                </span>
+                <h3 className="mt-1 font-bold text-ink">{modulo.nombre}</h3>
+                <p className="mt-1.5 text-sm text-muted">{modulo.resumen}</p>
+              </Card>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Button to="/modulos" variant="secondary">
+              Ver los {modulosActivos.length} módulos
+              <ArrowRight size={16} aria-hidden="true" />
+            </Button>
+          </div>
+        </Container>
+      </section>
+
+      {/* Clientes reales */}
+      {casosReales.length > 0 ? (
+        <section className="py-20">
+          <Container>
+            <SectionHeading
+              eyebrow="Clientes"
+              title="Negocios reales que ya operan con Baboons"
+              subtitle="Desde la fábrica de pastas Bossio hasta Cuyo Automotores en Mendoza."
+            />
+            <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {casosReales.map((caso) => (
+                <Card key={caso.slug}>
+                  <h3 className="font-bold text-ink">{caso.cliente}</h3>
+                  <p className="mt-1 text-xs text-subtle">{caso.rubro}</p>
+                  <p className="mt-2 text-sm text-muted">{caso.resultado}</p>
+                </Card>
+              ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Button to="/casos-de-exito" variant="secondary">
+                Ver todos los casos
+              </Button>
+            </div>
+          </Container>
+        </section>
+      ) : null}
+
       {/* Propuesta de valor */}
       <section className="border-y border-line bg-surface py-20">
         <Container>
           <SectionHeading eyebrow="Por qué Baboons" title="Pensado para el mercado argentino" />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {valores.map((valor) => {
               const Icon = valor.icon
               return (
@@ -136,6 +221,28 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Integraciones */}
+      <section className="py-20">
+        <Container>
+          <SectionHeading
+            eyebrow="Integraciones"
+            title="Conectado con el ecosistema que ya usás"
+            subtitle="Facturación fiscal, redes sociales, ERPs externos y medios de pago — sin duplicar datos."
+          />
+          <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+            {integraciones.map((item) => (
+              <li
+                key={item}
+                className="flex items-center gap-3 rounded-xl border border-line bg-surface px-5 py-4 text-sm text-ink-soft"
+              >
+                <span className="h-2 w-2 shrink-0 rounded-full bg-brand" aria-hidden="true" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
       {/* CTA */}
       <section className="bg-brand py-16">
         <Container className="text-center">
@@ -143,7 +250,8 @@ export default function Home() {
             Agendá una demo de Baboons ERP
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-white/90">
-            Contanos cómo opera tu negocio y te armamos una demo a medida.
+            Contanos cómo opera tu negocio y te armamos una demo a medida con los módulos de tu
+            vertical.
           </p>
           <div className="mt-7">
             <Button to="/contacto" variant="secondary" size="lg">
