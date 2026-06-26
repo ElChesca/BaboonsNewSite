@@ -1,0 +1,35 @@
+/* Sistema de diseño Baboons — tokens.
+   Se exponen como theme de Tailwind v4: cada --color-* genera utilidades
+   (bg-*, text-*, border-*). Hereda y evoluciona el diseño del one-pager. */
+@theme {
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, Helvetica,
+    Arial, sans-serif;
+
+  /* superficies */
+  --color-bg: #f6f8fb;
+  --color-bg-soft: #eef1f6;
+  --color-surface: #ffffff;
+  --color-line: #e2e8f0;
+  --color-line-strong: #d0d8e8;
+
+  /* texto */
+  --color-ink: #0f1728;
+  --color-ink-soft: #374151;
+  --color-muted: #6b7280;
+  --color-subtle: #94a3b8;
+
+  /* marca y acentos */
+  --color-brand: #e85d20;
+  --color-brand-hover: #d24f17;
+  --color-brand-soft: #ff7a3d;
+  --color-cyan: #008fb5;
+  --color-cyan-soft: #00b4d8;
+  --color-green: #059669;
+  --color-purple: #7c3aed;
+  --color-amber: #d97706;
+
+  /* sombras */
+  --shadow-card: 0 4px 16px rgba(15, 23, 40, 0.07), 0 1px 4px rgba(15, 23, 40, 0.04);
+  --shadow-lift: 0 8px 32px rgba(15, 23, 40, 0.09), 0 2px 8px rgba(15, 23, 40, 0.04);
+}
