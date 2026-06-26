@@ -1,29 +1,49 @@
 import { Link } from 'react-router-dom'
+import logoSrc from '../../assets/logo-baboons.png'
 
 type LogoProps = {
   className?: string
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'sm' | 'md' | 'lg' | 'xl'
+  /** Mostrar el texto "Baboons.Co" junto al isotipo. */
+  showText?: boolean
 }
 
-const sizes = {
-  sm: 'h-8 w-8',
-  md: 'h-10 w-10',
-  lg: 'h-14 w-14',
+const imageSizes = {
+  sm: 'h-9 w-9',
+  md: 'h-11 w-11',
+  lg: 'h-16 w-16',
+  xl: 'h-24 w-24',
 }
 
-export function Logo({ className = '', size = 'md' }: LogoProps) {
+const pixelSizes = {
+  sm: 36,
+  md: 44,
+  lg: 64,
+  xl: 96,
+}
+
+export function Logo({ className = '', size = 'md', showText = true }: LogoProps) {
+  const px = pixelSizes[size]
+
   return (
-    <Link to="/" className={`inline-flex items-center gap-2.5 ${className}`} aria-label="Baboons.Co — Inicio">
+    <Link
+      to="/"
+      className={`inline-flex items-center gap-3 ${className}`}
+      aria-label="Baboons.Co — Inicio"
+    >
       <img
-        src="/images/logo-baboons.png"
-        alt="Logo Baboons.Co"
-        className={`${sizes[size]} shrink-0 rounded-full object-cover`}
-        width={size === 'lg' ? 56 : size === 'md' ? 40 : 32}
-        height={size === 'lg' ? 56 : size === 'md' ? 40 : 32}
+        src={logoSrc}
+        alt="Baboons.Co"
+        className={`${imageSizes[size]} shrink-0 rounded-full object-contain shadow-sm ring-1 ring-line`}
+        width={px}
+        height={px}
+        decoding="async"
       />
-      <span className="text-lg font-extrabold tracking-tight text-ink">
-        Baboons<span className="text-brand">.Co</span>
-      </span>
+      {showText ? (
+        <span className="text-lg font-extrabold tracking-tight text-ink">
+          Baboons<span className="text-brand">.Co</span>
+        </span>
+      ) : null}
     </Link>
   )
 }

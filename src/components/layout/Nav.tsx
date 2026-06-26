@@ -19,7 +19,7 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-surface/90 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between">
-        <Logo />
+        <Logo size="md" />
 
         <nav aria-label="Navegación principal" className="hidden items-center gap-7 lg:flex">
           {links.map((link) => (

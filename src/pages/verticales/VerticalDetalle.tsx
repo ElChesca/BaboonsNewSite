@@ -9,6 +9,8 @@ import { Seo } from '../../components/ui/Seo'
 import { getVertical } from '../../content/verticales'
 import { getModulo } from '../../content/modulos'
 import { getCasosPorVertical } from '../../content/casos'
+import { getErpShowcase } from '../../content/erpShowcases'
+import { ErpShowcase } from '../../components/ui/ErpShowcase'
 
 export default function VerticalDetalle() {
   const { slug } = useParams<{ slug: string }>()
@@ -33,6 +35,7 @@ export default function VerticalDetalle() {
     .map((moduloSlug) => getModulo(moduloSlug))
     .filter((modulo) => modulo !== undefined)
   const casos = getCasosPorVertical(vertical.slug)
+  const erpShowcase = getErpShowcase(vertical.slug)
 
   return (
     <>
@@ -77,6 +80,17 @@ export default function VerticalDetalle() {
               </li>
             ))}
           </ul>
+
+          {erpShowcase ? (
+            <div className="mt-14 border-t border-line pt-14">
+              <ErpShowcase
+                titulo={erpShowcase.titulo}
+                subtitulo={erpShowcase.subtitulo}
+                capturas={erpShowcase.capturasDestacadas}
+                secciones={erpShowcase.secciones}
+              />
+            </div>
+          ) : null}
 
           {casos.length > 0 ? (
             <>

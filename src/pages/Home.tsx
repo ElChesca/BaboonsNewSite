@@ -79,7 +79,7 @@ export default function Home() {
       <section className="border-b border-line bg-surface">
         <Container className="py-20 text-center sm:py-28">
           <div className="mx-auto flex justify-center">
-            <Logo size="lg" className="flex-col gap-3 sm:flex-row" />
+            <Logo size="xl" />
           </div>
           <div className="mx-auto mt-8 inline-flex items-center gap-2 rounded-full border border-line-strong bg-bg px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted">
             <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden="true" />
@@ -240,6 +240,34 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </Container>
+      </section>
+
+      {/* Vista previa ERP — Distribuidora */}
+      <section className="py-20">
+        <Container>
+          <SectionHeading
+            eyebrow="El ERP en acción"
+            title="Distribuidoras que operan con Baboons"
+            subtitle="Hojas de ruta con mapa, liquidación de reparto, historial de ventas y más de 40 módulos integrados para distribución mayorista."
+          />
+          <div className="mt-10 overflow-hidden rounded-2xl border border-line bg-surface shadow-[var(--shadow-card)]">
+            <img
+              src="/images/erp/distribuidora/centro-operaciones-logisticas.png"
+              alt="Centro de Operaciones Logísticas de Baboons ERP para distribuidoras"
+              className="w-full object-cover object-top"
+              loading="lazy"
+            />
+          </div>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button to="/verticales/distribucion">
+              Ver vertical Distribución
+              <ArrowRight size={16} aria-hidden="true" />
+            </Button>
+            <Button to="/contacto" variant="secondary">
+              Solicitar demo
+            </Button>
+          </div>
         </Container>
       </section>
 

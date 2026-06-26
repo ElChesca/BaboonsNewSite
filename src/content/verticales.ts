@@ -47,16 +47,17 @@ export const verticales: Vertical[] = [
     slug: 'distribucion',
     nombre: 'Distribución',
     resumen:
-      'Distribuidoras y reparto: preventa, hojas de ruta, entrega en campo, van sales y liquidación diaria.',
+      'Distribuidoras y reparto: hojas de ruta con mapa, apps móviles, liquidación de reparto, ventas, facturación y gestión administrativa completa.',
     problema:
       'Los repartidores cobran en papel, el stock del camión no se controla y la liquidación del día se hace a mano al volver del reparto.',
-    modulos: ['distribuidora', 'inventario', 'remitos', 'cuenta-corriente', 'facturacion', 'listas-precios'],
+    modulos: ['distribuidora', 'inventario', 'remitos', 'cuenta-corriente', 'facturacion', 'listas-precios', 'compras'],
     funcionalidades: [
-      { titulo: 'Preventa y despacho', detalle: 'Flujo completo de preventa → despacho → entrega con remitos automáticos.' },
-      { titulo: 'Modo repartidor', detalle: 'App móvil con cobro integrado y stock por vehículo en tiempo real.' },
-      { titulo: 'Liquidación diaria', detalle: 'Conciliación financiera de cada hoja de ruta con retorno de mercadería.' },
-      { titulo: 'Portal B2B', detalle: 'Clientes mayoristas hacen pedidos desde un portal de ventas público.' },
-      { titulo: 'Listas de precios', detalle: 'Precios por cliente, ofertas por volumen y descuentos escalonados.' },
+      { titulo: 'Centro de operaciones', detalle: 'Panel con hojas de ruta, flota, mapa de clientes, pedidos y apps móviles de vendedores y repartidores.' },
+      { titulo: 'Hoja de ruta con mapa', detalle: 'Rutas visuales con visitas, carga auto-venta, rendición del chofer y liquidación al cierre del día.' },
+      { titulo: 'Historial de ventas', detalle: 'Tablero con ingresos, ticket promedio, gráficos por forma de pago y exportación a Excel.' },
+      { titulo: 'Liquidación de reparto', detalle: 'Resumen contable, mercadería entregada, retornos físicos, mermas y cobros por responsable.' },
+      { titulo: 'Gestión administrativa', detalle: 'Compras, proveedores, catálogo, listas de precios, caja y transferencias de stock internas.' },
+      { titulo: 'Reportes y auditoría', detalle: 'Kardex, historial de ventas, presupuestos, pagos a proveedores e ingresos de mercadería.' },
     ],
   },
   {
