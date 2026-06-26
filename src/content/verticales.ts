@@ -13,18 +13,58 @@ export type Vertical = {
 export const verticales: Vertical[] = [
   {
     slug: 'gastronomia',
-    nombre: 'Gastronomía',
+    nombre: 'Gastronomía · Restó',
     resumen:
-      'Restaurantes y locales gastronómicos: mozos, cocina, caja, carta premium y stock en un solo sistema.',
+      'Restaurantes y locales gastronómicos: portal de reservas white-label, salón virtual, KDS, carta digital, propina con QR y gamificación.',
     problema:
-      'El salón usa un sistema, la cocina otro y el stock se controla en planillas. Sin integración, la caja nunca cierra a la primera y las comandas se pierden entre variantes.',
-    modulos: ['pos-resto', 'facturacion', 'inventario', 'cuenta-corriente', 'listas-precios'],
+      'El salón usa un sistema, la cocina otro, las reservas van por WhatsApp y la carta no refleja el stock. Sin integración, la caja nunca cierra a la primera.',
+    modulos: ['pos-resto', 'reservas-eventos', 'facturacion', 'inventario', 'cuenta-corriente', 'listas-precios', 'crm'],
     funcionalidades: [
-      { titulo: 'Salón y mesas', detalle: 'Gestión de mesas, comandas y cierre de caja por turno con arqueos administrativos.' },
-      { titulo: 'Kitchen Display', detalle: 'KDS por destino: cocina, barra y salón con alertas por tiempo en mesa.' },
-      { titulo: 'Carta premium', detalle: 'Gestión integral de la carta con precios programados y stock vinculado en tiempo real.' },
-      { titulo: 'Propina digital', detalle: 'Sugerencia interactiva del 10% en POS mozos con flujo centralizado pre-cuenta → caja.' },
-      { titulo: 'Roles operativos', detalle: 'Perfiles diferenciados para mozos, jefe de cocina, baristas y cajeros.' },
+      {
+        titulo: 'Portal de reservas por negocio',
+        detalle:
+          'Estilo white-label por local (ej. Vita Club): comensales, momento de visita, horarios con cupos y preferencias alimentarias.',
+      },
+      {
+        titulo: 'Horarios y cupos inteligentes',
+        detalle:
+          'Disponibilidad en tiempo real por franja horaria, con bloqueo automático cuando no hay cupo.',
+      },
+      {
+        titulo: 'Confirmación y reconfirmación',
+        detalle:
+          'Email automático al reservar, recordatorios y flujo de identificación del comensal antes de confirmar.',
+      },
+      {
+        titulo: 'Salón virtual',
+        detalle:
+          'Mapa de mesas por sector, estado en vivo (libre, ocupada, en cobro), mozo asignado y tiempos por mesa.',
+      },
+      {
+        titulo: 'POS Mozos y comandas',
+        detalle:
+          'Toma de pedido por mesa, envío a cocina/barra, cambio de mozo, división de cuenta y propina digital.',
+      },
+      {
+        titulo: 'KDS por destino',
+        detalle:
+          'Kitchen Display en cocina, barra y salón con alertas por tiempo en mesa y flujo de comandas.',
+      },
+      {
+        titulo: 'Propina digital con QR',
+        detalle:
+          'Generación de QR dinámico según el porcentaje del consumo, con sugerencia interactiva en el POS.',
+      },
+      {
+        titulo: 'Carta virtual programada',
+        detalle:
+          'Activación y pausa por categoría y horario, múltiples listas de precios por salón y sincronización con inventario.',
+      },
+      {
+        titulo: 'Gamificación y puntos',
+        detalle:
+          'Puntaje por visitas, reservas y consumos. Club de puntos y fidelización integrados al CRM.',
+      },
     ],
   },
   {

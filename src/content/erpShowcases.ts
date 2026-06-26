@@ -209,6 +209,118 @@ export const erpShowcases: ErpShowcase[] = [
       },
     ],
   },
+  {
+    verticalSlug: 'gastronomia',
+    titulo: 'Así se ve Baboons ERP para restaurantes y restós',
+    subtitulo:
+      'Portal de reservas con identidad de marca, salón virtual, POS mozos, KDS, carta digital programada y propina con QR — desde Vita Club hasta cadenas con múltiples salones.',
+    capturasDestacadas: [
+      {
+        src: '/images/erp/resto/portal-reservas-horarios.png',
+        titulo: 'Portal de Reservas — Horarios y cupos',
+        descripcion:
+          'Cupos inteligentes por franja horaria con estilo personalizado por negocio. Ejemplo: Vita Club.',
+      },
+      {
+        src: '/images/erp/resto/reservas-mesas-dashboard.png',
+        titulo: 'Dashboard de Reservas',
+        descripcion:
+          'Estadísticas de reservas, comensales, tasa de confirmación, no-show, origen y demanda por horario.',
+      },
+      {
+        src: '/images/erp/resto/salon-virtual.png',
+        titulo: 'Salón Virtual',
+        descripcion:
+          'Estado de mesas por sector en tiempo real: libres, ocupadas y en cobro, con mozo y tiempos.',
+      },
+      {
+        src: '/images/erp/resto/pos-mozo.png',
+        titulo: 'POS Mozos',
+        descripcion:
+          'Toma de pedido, envío a cocina, propina digital, cambio de mozo y división de cuenta.',
+      },
+      {
+        src: '/images/erp/resto/gestion-carta.png',
+        titulo: 'Gestión de Carta',
+        descripcion:
+          'Carta sincronizada con inventario: categorías, precios por menú/salón, pausado y programador horario.',
+      },
+      {
+        src: '/images/erp/resto/portal-reservas-identificacion.png',
+        titulo: 'Portal — Confirmación del comensal',
+        descripcion:
+          'Flujo de identificación, resumen de la reserva y confirmación con email automático.',
+      },
+    ],
+    secciones: [
+      {
+        titulo: 'Portal de Reservas (white-label)',
+        modulos: [
+          'Estilo por negocio / marca',
+          'Selección de comensales',
+          'Momento de visita (desayuno, almuerzo, cena)',
+          'Horarios y cupos inteligentes',
+          'Preferencias y restricciones alimentarias',
+          'Identificación y confirmación',
+          'Compartir link del portal',
+          'Exportar reservas a Excel',
+        ],
+      },
+      {
+        titulo: 'Reservas y fidelización',
+        modulos: [
+          'Dashboard de estadísticas',
+          'Confirmación automática por email',
+          'Reconfirmación de reserva',
+          'Tasa de no-show y confirmación',
+          'Origen: portal web vs. manual',
+          'Gamificación y puntos por visitas',
+          'Puntos por reservas y consumos',
+          'Líderes y ranking de mozos',
+        ],
+      },
+      {
+        titulo: 'Salón y operación',
+        modulos: [
+          'Salón Virtual por sectores',
+          'Estado de mesa: libre / ocupada / en cobro',
+          'Asignación de mozo por mesa',
+          'Tiempos de permanencia',
+          'POS Mozos con comandas',
+          'Cambio de mozo',
+          'Dividir mesa y cuenta',
+          'Pre-cuenta y cierre de caja',
+        ],
+      },
+      {
+        titulo: 'Cocina, carta y cobros',
+        modulos: [
+          'KDS Cocina',
+          'KDS Barra',
+          'KDS Salón',
+          'Alertas por tiempo en mesa',
+          'Carta virtual con QR',
+          'Activación por categoría y horario',
+          'Múltiples menús por salón',
+          'Propina digital con QR dinámico',
+          'Sugerencia de % según consumo',
+        ],
+      },
+      {
+        titulo: 'Gestión de carta',
+        modulos: [
+          'Catálogo de platos con imágenes',
+          'Categorías y guarniciones',
+          'Precios por menú (Dolce, Bodegón, etc.)',
+          'Sincronización con inventario',
+          'Pausar platos y bajo stock',
+          'Programador de carta',
+          'Bitácora de cambios',
+          'Exportar / importar carta',
+        ],
+      },
+    ],
+  },
 ]
 
 export function getErpShowcase(verticalSlug: string): ErpShowcase | undefined {

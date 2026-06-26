@@ -216,6 +216,34 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Vista previa ERP — Restó / Gastronomía */}
+      <section className="border-t border-line py-20">
+        <Container>
+          <SectionHeading
+            eyebrow="El ERP en acción"
+            title="Restós: del portal de reservas al salón virtual"
+            subtitle="Cupos inteligentes, confirmación automática, KDS, carta programada y propina digital con QR — con portal white-label por negocio como Vita Club."
+          />
+          <div className="mt-10 overflow-hidden rounded-2xl border border-line bg-surface shadow-[var(--shadow-card)]">
+            <img
+              src="/images/erp/resto/salon-virtual.png"
+              alt="Salón Virtual de Baboons ERP — gestión de mesas en tiempo real"
+              className="w-full object-cover object-top"
+              loading="lazy"
+            />
+          </div>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button to="/verticales/gastronomia">
+              Ver vertical Gastronomía
+              <ArrowRight size={16} aria-hidden="true" />
+            </Button>
+            <Button to="/contacto" variant="secondary">
+              Solicitar demo
+            </Button>
+          </div>
+        </Container>
+      </section>
+
       {/* Vista previa ERP — Manufactura */}
       <section className="border-t border-line bg-surface py-20">
         <Container>

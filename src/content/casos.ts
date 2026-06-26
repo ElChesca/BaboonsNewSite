@@ -23,6 +23,15 @@ export const casos: Caso[] = [
       'Unificó producción en planta, transferencias a sucursales y solicitud de mercadería con generación automática de Órdenes de Producción.',
   },
   {
+    slug: 'vitaclub-restaurante',
+    cliente: 'Vita Club',
+    vertical: 'gastronomia',
+    rubro: 'Club premium · Portal de reservas white-label',
+    modulos: ['reservas-eventos', 'pos-resto', 'crm'],
+    resultado:
+      'Portal de reservas con identidad de marca, cupos inteligentes por horario, confirmación por email y gamificación de puntos.',
+  },
+  {
     slug: 'vitaclub-eventos',
     cliente: 'Vita Club',
     vertical: 'club-premium',
