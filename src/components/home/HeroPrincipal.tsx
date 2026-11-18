@@ -2,55 +2,68 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { Container } from '../layout/Container'
 import { Button } from '../ui/Button'
-import { heroCards, heroImageSrc } from '../../content/heroCards'
+import { heroCards } from '../../content/heroCards'
 
 export function HeroPrincipal() {
   return (
-    <section className="border-b border-line bg-bg">
-      <h1 className="sr-only">Baboons ERP — Plataforma ERP multi-negocio para Argentina</h1>
-      <Container className="py-5 sm:py-8">
-        <figure className="relative mx-auto w-full max-w-7xl overflow-hidden rounded-xl shadow-[var(--shadow-lift)] ring-1 ring-line sm:rounded-2xl">
-          <img
-            src={heroImageSrc}
-            alt="Baboons ERP — soluciones por industria: gastronomía, distribución, manufactura, neumáticos, eventos, concesionarias y más"
-            className="block h-auto w-full"
-            width={1920}
-            height={1080}
-            decoding="async"
-            fetchPriority="high"
-          />
-
-          {/* Capa interactiva: cada celda del grid 3×3 enlaza a su vertical */}
-          <div
-            className="absolute inset-0 grid grid-cols-3 grid-rows-3"
-            aria-label="Verticales de Baboons ERP"
+    <section className="border-b border-line bg-bg" aria-labelledby="hero-titulo">
+      <Container className="py-12 sm:py-16">
+        <div className="mx-auto max-w-4xl text-center">
+          <h1
+            id="hero-titulo"
+            className="text-balance text-3xl font-extrabold tracking-tight text-ink sm:text-5xl sm:leading-tight"
           >
-            {heroCards.map((card) => (
+            La plataforma ERP multi-negocio de Argentina
+          </h1>
+          <p className="mx-auto mt-4 max-w-3xl text-base text-ink-soft sm:text-lg">
+            Un solo ecosistema para POS, facturación AFIP, logística, distribución y concesionarias.
+          </p>
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+            <Button to="/contacto" size="lg">
+              Solicitar demo
+              <ArrowRight size={18} aria-hidden="true" />
+            </Button>
+            <Button to="/verticales" variant="secondary" size="lg">
+              Explorar verticales
+            </Button>
+          </div>
+        </div>
+
+        <ul
+          aria-label="Verticales de Baboons ERP"
+          className="-mx-5 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 scroll-px-5 [scrollbar-width:thin] sm:-mx-8 sm:mt-12 sm:px-8 sm:scroll-px-8 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0 lg:scroll-px-0"
+        >
+          {heroCards.map((card, index) => (
+            <li key={card.nombre} className="w-[min(82vw,20.5rem)] shrink-0 snap-start lg:w-auto">
               <Link
-                key={card.label}
                 to={card.to}
-                className="group relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand"
-                aria-label={card.label}
+                className="group relative block overflow-hidden rounded-2xl shadow-[var(--shadow-card)] ring-1 ring-line transition duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] hover:ring-line-strong"
               >
-                <span className="sr-only">{card.label}</span>
+                <img
+                  src={card.image}
+                  alt={card.alt}
+                  width={360}
+                  height={214}
+                  className="aspect-[360/214] w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+                  decoding="async"
+                  fetchPriority={index < 3 ? 'high' : 'auto'}
+                />
                 <span
-                  className="absolute inset-0 bg-brand/0 transition-colors duration-200 group-hover:bg-brand/15 group-focus-visible:bg-brand/15"
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-[64%] bg-gradient-to-t from-ink from-[54%] to-transparent"
                   aria-hidden="true"
                 />
+                <span className="absolute inset-x-0 bottom-0 p-4">
+                  <span className="block text-base font-bold leading-tight text-white sm:text-lg">
+                    {card.nombre}
+                  </span>
+                  <span className="mt-1 block text-sm leading-snug text-white/90">
+                    {card.resuelve}
+                  </span>
+                </span>
               </Link>
-            ))}
-          </div>
-        </figure>
-
-        <div className="mt-7 flex flex-wrap items-center justify-center gap-3 sm:mt-8">
-          <Button to="/contacto" size="lg">
-            Solicitar demo
-            <ArrowRight size={18} aria-hidden="true" />
-          </Button>
-          <Button to="/verticales" variant="secondary" size="lg">
-            Explorar verticales
-          </Button>
-        </div>
+            </li>
+          ))}
+        </ul>
       </Container>
     </section>
   )
