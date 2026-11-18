@@ -13,21 +13,21 @@ export default function ModulosIndex() {
   return (
     <>
       <Seo
-        title="M?dulos ? Baboons ERP"
-        description={`Baboons ERP incluye m?s de ${ERP_TOTAL_MODULOS} m?dulos: POS, manufactura, facturaci?n AFIP, CRM, inventario, compras, distribuci?n, remitos y m?s.`}
+        title="Módulos — Baboons ERP"
+        description={`Baboons ERP incluye más de ${ERP_TOTAL_MODULOS} módulos: POS, manufactura, facturación AFIP, CRM, inventario, compras, distribución, remitos y más.`}
       />
       <PageHero
-        eyebrow="M?dulos"
-        title="Los m?dulos del sistema"
-        subtitle={`Baboons incluye m?s de ${ERP_TOTAL_MODULOS} m?dulos en producci?n. Ac? mostramos los principales agrupados por capacidad ? cada negocio activa solo lo que necesita.`}
+        eyebrow="Módulos"
+        title="Los módulos del sistema"
+        subtitle={`Baboons incluye más de ${ERP_TOTAL_MODULOS} módulos en producción. Acá mostramos los principales agrupados por capacidad — cada negocio activa solo lo que necesita.`}
       />
 
       <section className="py-16">
         <Container>
-          <h2 className="text-xl font-bold text-ink">M?dulos destacados</h2>
+          <h2 className="text-xl font-bold text-ink">Módulos destacados</h2>
           <p className="mt-2 max-w-2xl text-sm text-muted">
             Estas son las capacidades principales del ERP. El inventario completo supera los{' '}
-            {ERP_TOTAL_MODULOS} m?dulos seg?n el tipo de negocio configurado.
+            {ERP_TOTAL_MODULOS} módulos según el tipo de negocio configurado.
           </p>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {activos.map((modulo) => (
@@ -41,7 +41,7 @@ export default function ModulosIndex() {
             ))}
           </div>
 
-          <h2 className="mt-14 text-xl font-bold text-ink">Pr?ximamente</h2>
+          <h2 className="mt-14 text-xl font-bold text-ink">Próximamente</h2>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {proximos.map((modulo) => (
               <Card key={modulo.slug} to={`/modulos/${modulo.slug}`}>
@@ -49,7 +49,7 @@ export default function ModulosIndex() {
                   <span className="text-xs font-semibold uppercase tracking-wider text-subtle">
                     {modulo.categoria}
                   </span>
-                  <Badge tone="cyan">Pr?ximamente</Badge>
+                  <Badge tone="cyan">Próximamente</Badge>
                 </div>
                 <h3 className="mt-1 font-bold text-ink">{modulo.nombre}</h3>
                 <p className="mt-1.5 text-sm text-muted">{modulo.resumen}</p>
